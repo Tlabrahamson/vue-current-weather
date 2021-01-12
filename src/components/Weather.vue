@@ -1,7 +1,7 @@
 <template>
   <div class="weather-wrapper">
     <h1>{{weather.name}}, {{weather.sys.country}}</h1>
-    <img v-bind:src="`http://openweathermap.org/img/w/${weather.weather[0].icon}.png`" />
+    <img v-bind:src="`https://openweathermap.org/img/w/${weather.weather[0].icon}.png`" />
     <p>{{weather.weather[0].main}}</p>
     <h2>{{Math.ceil(weather.main.temp)}}°F</h2>
     <p>
@@ -33,7 +33,7 @@ export default {
       axios
         // Get request to the openweathermap coordinates endpoint. Passes in the latitude and longitude as variables from the current browser session.
         .get(
-          `http://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lng}&units=imperial&appid=43c7d73c0d4a1c7f1c901cd07f5c556d`
+          `https://api.openweathermap.org/data/2.5/weather?lat=${coordinates.lat}&lon=${coordinates.lng}&units=imperial&appid=43c7d73c0d4a1c7f1c901cd07f5c556d`
         )
         .then(res => {
           this.weather = res.data;
